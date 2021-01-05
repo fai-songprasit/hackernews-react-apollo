@@ -18,7 +18,7 @@ const CREATE_LINK_MUTATION = gql`
 const CreateLink = () => {
   const [formState, setFormState] = useState({
     description: '',
-    url: ''
+    url: '',
   });
   const [createLink] = useMutation(CREATE_LINK_MUTATION, {
     variables: {
@@ -32,6 +32,7 @@ const CreateLink = () => {
       <form
         onSubmit={(e) => {
           e.preventDefault();
+          createLink();
         }}
       >
         <div className="flex flex-column mt3">
